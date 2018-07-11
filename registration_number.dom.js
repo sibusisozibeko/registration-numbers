@@ -2,30 +2,29 @@
 var textElem = document.querySelector('.myTextarea')
 var btnElem = document.querySelector('.btnAdd')
 var resetElem = document.querySelector('.Reset')
-var displayElement = document.querySelector('.display')
+var displayElement = document.querySelector('.disp')
 var radioElem = document.querySelector('.radioz')
 var showElem = document.querySelector('.Show')
 
 var storing = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : {};
-// console.log(storing);
-//instance
+
 var enteredReg = RegiStration(storing)
 
-//function for list of regnumbers
 function btnClicked(regList) {
 
   if (regList !== '') {
 
-    var createList = document.createElement("li");
-    //li with the content assigned to parameter
+    var createList = document.createElement("p");
+    createList.classList.add('display')
+
     createList.textContent = regList;
-    //displaying another entered text inside the list
+
     displayElement.appendChild(createList)
 
     localStorage.setItem('users', JSON.stringify(enteredReg.regMap()));
 
   }
-  //creation of "li" element
+
   textElem.value = "";
 
 }
@@ -36,7 +35,7 @@ function radioClicked() {
   for (var i = 0; i < radioselect.length; i++) {
     btnClicked(radioselect[i]);
   }
-  // displayElement.innerHTML = storing;
+
 }
 
 function resetBtnClick() {
@@ -44,22 +43,18 @@ function resetBtnClick() {
   location.reload();
 }
 
-//addEventListener
 btnElem.addEventListener('click', function() {
-  var entered = textElem.value;
+  var entered = textElem.value.toUpperCase();
   if (enteredReg.Regadd(entered)) {
-
     btnClicked(entered);
+  } else {
+    alert("Registration number should startswith CA, CK and CY ")
   }
-
 });
 
 resetElem.addEventListener('click', resetBtnClick);
 
 showElem.addEventListener('click', function() {
+  displayElement.innerHTML = "";
   radioClicked()
 });
-
-// radioElem.addEventListener('click', function() {
-// radioClicked()
-// });

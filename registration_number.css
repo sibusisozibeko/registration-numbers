@@ -2,23 +2,35 @@
 .Reset{
   width: 100px;
   height: 30px;
+  margin: 5px;
   background-color: lightgreen;
-  margin: 50px;
 
 }
+
 .btnAdd{
   width: 100px;
   height: 30px;
-background-color: lightgreen;
-margin: 50px;
-
+  margin: 5px;
+  background-color: lightgreen;
 }
+
 .radioz{
   padding: 30px;
 }
+
 .Show{
   width: 100px;
   height: 30px;
-background-color: lightgreen;
-margin: 50px;
+  margin: 5px;
+  background-color: lightgreen;
+}
+
+.display{
+  margin: 20px;
+  width: 150px;
+  height: 30px;
+border-radius: 25px;
+background-color: yellow;
+border-style: solid;
+border-width: 3px;
 }

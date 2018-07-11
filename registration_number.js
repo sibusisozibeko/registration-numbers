@@ -16,20 +16,17 @@ function RegiStration(Regnum) {
   }
 
   function filtering(radio) {
-var townreg = Object.keys(storing);
-if(radio ==='all'){
-  return townreg;
-}
- let fil  = townreg.filter(current => current.startsWith(radio))
+    var townreg = Object.keys(storing);
+    if (radio === 'all') {
+      return townreg;
+    }
+    let fil = townreg.filter(current => current.startsWith(radio))
 
-return fil;
-}
-
-
-
+    return fil;
+  }
 
   function regCount() {
-return Object.keys(regentered);
+    return Object.keys(regentered);
   }
 
   function regMap() {
@@ -37,7 +34,7 @@ return Object.keys(regentered);
   }
 
   function clearButton() {
-return regentered = {};
+    return regentered = {};
   }
 
 
