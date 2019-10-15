@@ -20,6 +20,7 @@ function RegiStration(Regnum) {
     if (radio === 'all') {
       return townreg;
     }
+    
     let fil = townreg.filter(current => current.startsWith(radio))
 
     return fil;
